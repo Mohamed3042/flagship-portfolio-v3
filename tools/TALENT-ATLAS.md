@@ -33,3 +33,12 @@ The UI is bilingual; the source film itself contains English interface text. The
 Browser checks cover desktop, portrait phone, landscape phone and Arabic phone viewports; eleven forward/reverse time positions per viewport; idle frame stability; full-frame/fill toggle; chapter navigation; sound playback/pause; orientation continuity; reduced-motion opt-in and failed-media recovery. This is browser emulation, not a physical-phone or iOS Safari acceptance claim.
 
 The companion private source and master are maintained in Mohamed3042/talent-atlas under marketing/film-v2.1 and release film-v2.1-20261003. No private recruiting data, application source or source archives are copied to this public portfolio.
+
+
+## Native phone edition
+
+Tall phone screens now load a separately composed 9:16 film. The full-quality portrait MP4 is talent-atlas-film-v2.1-portrait.mp4 (1080 x 1920, 60 fps, 90 seconds); film-scroll-portrait-v2.1.mp4 is the 720 x 1280 / 30 fps short-GOP scroll encode. It is a new portrait render with enlarged typography, exact UI excerpts, vertical illusions and a readable review note, using the same thirteen-chapter timeline and score. The approved desktop media remain byte-identical.
+
+The source selection follows viewport orientation. Rotation pauses playback, switches editions and restores the playhead. Scrolls continue to seek forward and backward; both language routes use the same English film. Portrait framing stays centred. Full-film links select the corresponding master. No new media are added to the global cinema preload.
+
+TALENT-ATLAS-PHONE-QA.json records 44 forward/backward seek samples across portrait, desktop, phone landscape and Arabic phone views; play/pause, rotation, reduced-motion and media-error paths; exact media dimensions/duration; full decode and audio/seek-encoding checks. Validation uses browser emulation, not a physical device.

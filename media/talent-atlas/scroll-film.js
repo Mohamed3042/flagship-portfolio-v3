@@ -11,9 +11,18 @@
   let desired=0, displayed=0, inFlight=false, scheduled=false, mode='scroll', chapter=0;
   let scrollEnabled=!reduced.matches, loaded=false, expectedScroll=-1, failed=false, playFrame=0;
   const scrollLength=()=>Math.max(1,document.documentElement.scrollHeight-innerHeight);
-  const source=(matchMedia('(max-width: 900px)').matches || matchMedia('(pointer: coarse)').matches) ? video.dataset.phone : video.dataset.desktop;
+  const portrait=()=>innerWidth<=900&&innerHeight>innerWidth;
+  const chooseSource=()=>portrait()?video.dataset.phone:video.dataset.desktop;
+  let source=chooseSource();
+  function updatePresentation(){
+    root.dataset.edition=portrait()?'portrait':'desktop';
+    const poster=document.querySelector('.picture>img');
+    poster.src=portrait()?video.dataset.phonePoster:video.dataset.desktopPoster;
+    document.querySelectorAll('[data-film-link]').forEach(link=>{link.href=portrait()?video.dataset.phoneFull:video.dataset.full;});
+  }
   function attach(){
     if(loaded)return;
+    source=chooseSource();updatePresentation();
     loaded=true;video.muted=true;video.defaultMuted=true;video.src=source;video.load();
   }
   function setStatus(message){status.textContent=message;}
@@ -32,7 +41,7 @@
     document.querySelector('[data-time]').textContent=clock(time);
     document.querySelector('[data-count]').textContent=String(chapter+1).padStart(2,'0')+' / 13';
     document.querySelector('[data-title]').textContent=chapters[chapter].title;
-    root.style.setProperty('--pan',(panAt(time)*100).toFixed(3)+'%');
+    root.style.setProperty('--pan',portrait()?'50%':(panAt(time)*100).toFixed(3)+'%');
     hint.hidden=scrollEnabled&&time>.35;
     document.querySelector('[data-end]').hidden=time<88.5;
     reel.dataset.chapter=String(chapter);
@@ -90,7 +99,7 @@
     const retry=document.createElement('button');retry.type='button';
     retry.textContent=ar?'إعادة المحاولة':'Retry';
     retry.addEventListener('click',()=>{failed=false;loaded=false;attach();setStatus(ar?'جارٍ تحميل الفيلم…':'Loading the film…');},{once:true});
-    const link=document.createElement('a');link.href=video.dataset.desktop.replace('film-scroll-desktop.mp4','talent-atlas-film-v2.1.mp4');
+    const link=document.createElement('a');link.href=portrait()?video.dataset.phoneFull:video.dataset.full;
     link.textContent=ar?' افتح الفيلم ↗':' Open film ↗';
     status.append(message,retry,link);
   });
@@ -127,7 +136,15 @@
   let resizeTimer;
   addEventListener('resize',()=>{
     const time=desired;clearTimeout(resizeTimer);
-    resizeTimer=setTimeout(()=>{if(scrollEnabled&&mode==='scroll')moveTo(time);else paint(time);},100);
+    resizeTimer=setTimeout(()=>{
+      if(chooseSource()!==source){
+        const wasLoaded=loaded;
+        stopped();desired=time;source=chooseSource();inFlight=false;loaded=false;
+        video.classList.remove('ready');updatePresentation();
+        if(wasLoaded)attach();
+      }
+      if(scrollEnabled&&mode==='scroll')moveTo(time);else paint(time);
+    },100);
   },{passive:true});
   range.addEventListener('input',()=>moveTo(Number(range.value)));
   document.querySelector('[data-previous]').addEventListener('click',()=>moveTo(chapters[Math.max(0,chapter-1)].start));
@@ -155,6 +172,7 @@
     attach();schedule();
   }
   enable.addEventListener('click',enableScroll);
+  updatePresentation();
   if(scrollEnabled){root.dataset.scrollEnabled='true';attach();schedule();}
   else{
     enable.hidden=false;

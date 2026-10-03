@@ -1,0 +1,699 @@
+{
+  "scope": "Native portrait film and responsive scrolling integration; browser emulation, not physical-phone acceptance",
+  "browser": [
+    {
+      "name": "phone",
+      "dimensions": {
+        "width": 720,
+        "height": 1280,
+        "src": "film-scroll-portrait-v2.1.mp4"
+      },
+      "errors": [],
+      "samples": [
+        {
+          "target": 0,
+          "desired": 0,
+          "displayed": 0,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.13
+        },
+        {
+          "target": 13.4,
+          "desired": 13.401284722222222,
+          "displayed": 13.401284,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 1,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5786815250423938
+        },
+        {
+          "target": 20.5,
+          "desired": 20.498655092592593,
+          "displayed": 20.498655,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 2,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.4656566736725439
+        },
+        {
+          "target": 36.5,
+          "desired": 36.49897685185186,
+          "displayed": 36.498976,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 4,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5168012685291101
+        },
+        {
+          "target": 48.5,
+          "desired": 48.50078009259259,
+          "displayed": 48.50078,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5579682472813376
+        },
+        {
+          "target": 67,
+          "desired": 67.00017592592592,
+          "displayed": 67.000175,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 9,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.26155177544175734
+        },
+        {
+          "target": 78.5,
+          "desired": 78.50216435185185,
+          "displayed": 78.502164,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 11,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.22
+        },
+        {
+          "target": 86,
+          "desired": 85.99938657407408,
+          "displayed": 85.999386,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 89.9,
+          "desired": 89.89794212962963,
+          "displayed": 89.897942,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 45,
+          "desired": 45.002076388888895,
+          "displayed": 45.002076,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2
+        },
+        {
+          "target": 4,
+          "desired": 3.9985185185185186,
+          "displayed": 3.998518,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2510987797139017
+        }
+      ],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "playPause": true
+    },
+    {
+      "name": "desktop",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "src": "film-scroll-desktop.mp4"
+      },
+      "errors": [],
+      "samples": [
+        {
+          "target": 0,
+          "desired": 0,
+          "displayed": 0,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.13
+        },
+        {
+          "target": 13.4,
+          "desired": 13.400590534979424,
+          "displayed": 13.40059,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 1,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5784765524668248
+        },
+        {
+          "target": 20.5,
+          "desired": 20.497960905349796,
+          "displayed": 20.49796,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 2,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.46554213491379903
+        },
+        {
+          "target": 36.5,
+          "desired": 36.49758847736626,
+          "displayed": 36.497588,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 4,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5165366374353397
+        },
+        {
+          "target": 48.5,
+          "desired": 48.4986975308642,
+          "displayed": 48.498697,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5575913984296887
+        },
+        {
+          "target": 67,
+          "desired": 66.99739917695473,
+          "displayed": 66.997399,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 9,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2611596729242119
+        },
+        {
+          "target": 78.5,
+          "desired": 78.49869341563786,
+          "displayed": 78.498693,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 11,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.22
+        },
+        {
+          "target": 86,
+          "desired": 86.00146913580248,
+          "displayed": 86.001469,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 89.9,
+          "desired": 89.90002469135803,
+          "displayed": 89.900024,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 45,
+          "desired": 44.999993827160495,
+          "displayed": 44.999993,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2
+        },
+        {
+          "target": 4,
+          "desired": 3.9985185185185186,
+          "displayed": 3.998518,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2510987797139017
+        }
+      ],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      },
+      "playPause": true
+    },
+    {
+      "name": "phone-landscape",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "src": "film-scroll-desktop.mp4"
+      },
+      "errors": [],
+      "samples": [
+        {
+          "target": 0,
+          "desired": 0,
+          "displayed": 0,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.13
+        },
+        {
+          "target": 13.4,
+          "desired": 13.400590534979424,
+          "displayed": 13.40059,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 1,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5784765524668248
+        },
+        {
+          "target": 20.5,
+          "desired": 20.497960905349796,
+          "displayed": 20.49796,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 2,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.46554213491379903
+        },
+        {
+          "target": 36.5,
+          "desired": 36.49758847736626,
+          "displayed": 36.497588,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 4,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5165366374353397
+        },
+        {
+          "target": 48.5,
+          "desired": 48.4986975308642,
+          "displayed": 48.498697,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5575913984296887
+        },
+        {
+          "target": 67,
+          "desired": 66.99739917695473,
+          "displayed": 66.997399,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 9,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2611596729242119
+        },
+        {
+          "target": 78.5,
+          "desired": 78.49869341563786,
+          "displayed": 78.498693,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 11,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.22
+        },
+        {
+          "target": 86,
+          "desired": 86.00146913580248,
+          "displayed": 86.001469,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 89.9,
+          "desired": 89.90002469135803,
+          "displayed": 89.900024,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 45,
+          "desired": 44.999993827160495,
+          "displayed": 44.999993,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2
+        },
+        {
+          "target": 4,
+          "desired": 3.9985185185185186,
+          "displayed": 3.998518,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-desktop.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2510987797139017
+        }
+      ],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 844,
+        "height": 390,
+        "viewportWidth": 844,
+        "viewportHeight": 390
+      },
+      "playPause": true
+    },
+    {
+      "name": "arabic-phone",
+      "dimensions": {
+        "width": 720,
+        "height": 1280,
+        "src": "film-scroll-portrait-v2.1.mp4"
+      },
+      "errors": [],
+      "samples": [
+        {
+          "target": 0,
+          "desired": 0,
+          "displayed": 0,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.13
+        },
+        {
+          "target": 13.4,
+          "desired": 13.401284722222222,
+          "displayed": 13.401284,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 1,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5786815250423938
+        },
+        {
+          "target": 20.5,
+          "desired": 20.498655092592593,
+          "displayed": 20.498655,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 2,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.4656566736725439
+        },
+        {
+          "target": 36.5,
+          "desired": 36.49897685185186,
+          "displayed": 36.498976,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 4,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5168012685291101
+        },
+        {
+          "target": 48.5,
+          "desired": 48.50078009259259,
+          "displayed": 48.50078,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5579682472813376
+        },
+        {
+          "target": 67,
+          "desired": 67.00017592592592,
+          "displayed": 67.000175,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 9,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.26155177544175734
+        },
+        {
+          "target": 78.5,
+          "desired": 78.50216435185185,
+          "displayed": 78.502164,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 11,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.22
+        },
+        {
+          "target": 86,
+          "desired": 85.99938657407408,
+          "displayed": 85.999386,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 89.9,
+          "desired": 89.89794212962963,
+          "displayed": 89.897942,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 12,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.5
+        },
+        {
+          "target": 45,
+          "desired": 45.002076388888895,
+          "displayed": 45.002076,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 6,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2
+        },
+        {
+          "target": 4,
+          "desired": 3.9985185185185186,
+          "displayed": 3.998518,
+          "paused": true,
+          "seeking": false,
+          "mode": "scroll",
+          "chapter": 0,
+          "source": "talent-atlas/film-scroll-portrait-v2.1.mp4",
+          "scrollEnabled": true,
+          "framing": "fit",
+          "pan": 0.2510987797139017
+        }
+      ],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "playPause": true
+    },
+    {
+      "name": "reduced-motion",
+      "noPreloadBeforeOptIn": true,
+      "optInWorks": true
+    },
+    {
+      "name": "media-error",
+      "retry": true,
+      "fallback": true
+    }
+  ],
+  "master": {
+    "sha256": "0b2df1df5c5a7765aa63aef85697e60c4d6c70bc0bd57bebf0046ec05e5f8c72",
+    "bytes": 18908465,
+    "duration": 90.0,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 60,
+    "frames": 5400,
+    "fullDecode": true,
+    "audioLUFS": "-14.09",
+    "truePeak": "-1.59"
+  },
+  "scrollEncode": {
+    "sha256": "a86401f2d3488d2e4cd82dd9027fb9229fb3b71ae0083a258ff254295275b608",
+    "bytes": 23176531,
+    "dimensions": [
+      720,
+      1280
+    ],
+    "fps": 30,
+    "frames": 2700,
+    "fullDecode": true,
+    "seekEncoding": {
+      "keyframes": 675,
+      "maxGapSeconds": 0.13333400000000495
+    }
+  },
+  "sampledSourceFramesReviewed": 72,
+  "preservedDesktopSourceFiles": 201,
+  "desktopMovieUnchanged": true
+}

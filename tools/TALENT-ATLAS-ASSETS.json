@@ -1,5 +1,5 @@
 {
-  "scope": "Public allowlist: fictional demo film media only",
+  "scope": "Public allowlist: fictional demo film media only, approved desktop plus native portrait edition",
   "files": [
     {
       "path": "media/talent-atlas/captions-ar.vtt",
@@ -27,6 +27,11 @@
       "sha256": "00c81da28f7fb337441a2dd9044b15df4b9159bf387d093b273c4e57ba8e02a1"
     },
     {
+      "path": "media/talent-atlas/film-scroll-portrait-v2.1.mp4",
+      "bytes": 23176531,
+      "sha256": "a86401f2d3488d2e4cd82dd9027fb9229fb3b71ae0083a258ff254295275b608"
+    },
+    {
       "path": "media/talent-atlas/Inter-400.woff2",
       "bytes": 23664,
       "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
@@ -43,13 +48,23 @@
     },
     {
       "path": "media/talent-atlas/scroll-film.js",
-      "bytes": 9687,
-      "sha256": "11e6330fb3e6706b963454f916e6c2a3ec6489573d10aeacc020461d84261a42"
+      "bytes": 10394,
+      "sha256": "329749c47ef5a3e3568cd4f296f520295fda1cec7e181405d0535210cf4a09a1"
+    },
+    {
+      "path": "media/talent-atlas/scroll-portrait-poster.webp",
+      "bytes": 3270,
+      "sha256": "9c543067e642f504afc4ce99816e72128a0f1c6cfe2142467d2066e6ee3d9eb6"
     },
     {
       "path": "media/talent-atlas/scroll-poster.webp",
       "bytes": 3688,
       "sha256": "027ce7fe319b1f440c374a8379107cb428324d10a1e26fab13441502bd68aa66"
+    },
+    {
+      "path": "media/talent-atlas/talent-atlas-film-v2.1-portrait.mp4",
+      "bytes": 18908465,
+      "sha256": "0b2df1df5c5a7765aa63aef85697e60c4d6c70bc0bd57bebf0046ec05e5f8c72"
     },
     {
       "path": "media/talent-atlas/talent-atlas-film-v2.1.mp4",
