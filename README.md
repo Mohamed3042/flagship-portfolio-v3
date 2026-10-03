@@ -13,3 +13,7 @@ The site is published from the main branch root with GitHub Pages. Existing v1 a
 [Explore the scroll journey](https://mohamed3042.github.io/flagship-portfolio-v3/en/work/job-orbit/) · [العربية](https://mohamed3042.github.io/flagship-portfolio-v3/ar/work/job-orbit/) · [Film and editable source](https://github.com/Mohamed3042/motion-video-skill/releases/tag/job-orbit-v2.0)
 
 The ten-station parallax showcase is linked from the software notes, cinema and Products collection. Its illustrations use fictional sample data. [Editing and verification notes](scripts/job-orbit/README.md) describe the small standalone generator and browser checks.
+
+## Talent Atlas scroll film
+
+The film itself is the website: [English](https://mohamed3042.github.io/flagship-portfolio-v3/en/work/talent-atlas/) / [Arabic](https://mohamed3042.github.io/flagship-portfolio-v3/ar/work/talent-atlas/). Native scrolling moves the real video playhead forward and backward. The phone view preserves the complete composition by default. See [implementation and verification](tools/TALENT-ATLAS.md).

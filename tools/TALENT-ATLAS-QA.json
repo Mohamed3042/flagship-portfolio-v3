@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-03",
+  "scope": "Native scroll-controlled film, browser emulation",
+  "physicalDeviceVerified": false,
+  "checks": [
+    {
+      "name": "phone",
+      "errors": [],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "playPause": true,
+      "testedSeconds": [
+        0,
+        13.4,
+        20.5,
+        36.5,
+        48.5,
+        67,
+        78.5,
+        86,
+        89.9,
+        45,
+        4
+      ],
+      "maxSeekErrorSeconds": 0.0021639999999933934
+    },
+    {
+      "name": "desktop",
+      "errors": [],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 1440,
+        "height": 900,
+        "viewportWidth": 1440,
+        "viewportHeight": 900
+      },
+      "playPause": true,
+      "testedSeconds": [
+        0,
+        13.4,
+        20.5,
+        36.5,
+        48.5,
+        67,
+        78.5,
+        86,
+        89.9,
+        45,
+        4
+      ],
+      "maxSeekErrorSeconds": 0.002600999999998521
+    },
+    {
+      "name": "phone-landscape",
+      "errors": [],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 844,
+        "height": 390,
+        "viewportWidth": 844,
+        "viewportHeight": 390
+      },
+      "playPause": true,
+      "testedSeconds": [
+        0,
+        13.4,
+        20.5,
+        36.5,
+        48.5,
+        67,
+        78.5,
+        86,
+        89.9,
+        45,
+        4
+      ],
+      "maxSeekErrorSeconds": 0.002600999999998521
+    },
+    {
+      "name": "arabic-phone",
+      "errors": [],
+      "idleDrift": 0,
+      "fullFrame": "contain",
+      "fullViewport": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "playPause": true,
+      "testedSeconds": [
+        0,
+        13.4,
+        20.5,
+        36.5,
+        48.5,
+        67,
+        78.5,
+        86,
+        89.9,
+        45,
+        4
+      ],
+      "maxSeekErrorSeconds": 0.0021639999999933934
+    },
+    {
+      "name": "reduced-motion",
+      "noPreloadBeforeOptIn": true,
+      "optInWorks": true
+    },
+    {
+      "name": "media-error",
+      "retry": true,
+      "fallback": true
+    }
+  ],
+  "gallery": [
+    {
+      "lang": "en",
+      "errors": [],
+      "detailNavigation": true,
+      "dialogFocusRestored": true
+    },
+    {
+      "lang": "ar",
+      "errors": [],
+      "detailNavigation": true,
+      "dialogFocusRestored": true
+    }
+  ]
+}
