@@ -31,16 +31,23 @@
   async function fetchClip(index){
     if(cache.has(index))return cache.get(index);
     if(jobs.has(index))return jobs.get(index).promise;
-    const controller=new AbortController();
-    const timeout=setTimeout(()=>controller.abort(),20000);
-    const job=(async()=>{
-      const response=await fetch(clipURL(index),{signal:controller.signal});
-      if(!response.ok)throw new Error(`Film segment ${index}: HTTP ${response.status}`);
-      const blob=await response.blob();
-      const url=URL.createObjectURL(blob);cache.set(index,url);return url;
+    const job={promise:null,controller:null};
+    job.promise=(async()=>{
+      for(let attempt=0;attempt<2;attempt++){
+        const controller=new AbortController();job.controller=controller;
+        const timeout=setTimeout(()=>controller.abort(new DOMException('Film download timed out','TimeoutError')),60000);
+        try{
+          const response=await fetch(clipURL(index),{signal:controller.signal});
+          if(!response.ok)throw new Error(`Film segment ${index}: HTTP ${response.status}`);
+          const blob=await response.blob();
+          const url=URL.createObjectURL(blob);cache.set(index,url);return url;
+        }catch(error){
+          if(attempt===1||(controller.signal.aborted&&controller.signal.reason?.name!=='TimeoutError'))throw error;
+        }finally{clearTimeout(timeout);}
+      }
     })();
-    jobs.set(index,{promise:job,controller});
-    try{return await job;}finally{clearTimeout(timeout);if(jobs.get(index)?.promise===job)jobs.delete(index);}
+    jobs.set(index,job);
+    try{return await job.promise;}finally{if(jobs.get(index)===job)jobs.delete(index);}
   }
   function chapterAt(time){let chapter=data.chapters[0];for(const item of data.chapters)if(item.start<=time)chapter=item;return chapter;}
   function phoneFraming(time){
@@ -80,7 +87,8 @@
       slot.frameHandle=slot.video.requestVideoFrameCallback((_,metadata)=>{
         slot.frameHandle=0;if(slot.generation!==generation)return;
         slot.presented=metadata.mediaTime;slot.hasPresented=true;
-        paint(slot,metadata.mediaTime);watchFrames(slot);
+        if(slot.video.seeking||Math.abs(slot.video.currentTime-metadata.mediaTime)<frame*1.5)paint(slot,metadata.mediaTime);
+        watchFrames(slot);
         if(slot.index===desiredIndex)seek(slot,position-slot.index*data.clipSeconds);
         schedule();
       });
@@ -115,7 +123,8 @@
       slot.video.src=url;slot.video.load();
       watchFrames(slot);
     }).catch(error=>{
-      if(slot.generation!==generation||index!==desiredIndex)return;
+      if(slot.generation!==generation)return;
+      if(index!==desiredIndex){slot.index=-1;slot.ready=false;slot.generation++;return;}
       loader.classList.add('has-error');showLoading();message.textContent=text('The film could not load.','تعذر تحميل الفيلم.');retry.hidden=false;
       root.dataset.filmError=error.message;
     });
@@ -132,7 +141,12 @@
       schedule();
     });
     slot.video.addEventListener('seeked',()=>{
-      if(typeof slot.video.requestVideoFrameCallback!=='function')paint(slot,slot.video.currentTime);
+      const generation=slot.generation;
+      // Paused seeks can decode without another compositor callback.
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        if(slot.generation!==generation||slot.video.seeking||slot.video.readyState<2)return;
+        if(typeof slot.video.requestVideoFrameCallback!=='function'||slot!==display||Math.abs(slot.presented-slot.wanted)>frame+.002)paint(slot,slot.video.currentTime);
+      }));
       if(slot.index===desiredIndex)seek(slot,position-slot.index*data.clipSeconds);
       schedule();
     });
@@ -149,7 +163,7 @@
     goal=clamp(scrollY/travel,0,1)*lastTime;
     if(Math.abs(goal-lastGoal)>.01)lastDirection=goal>lastGoal?1:-1;
     lastGoal=goal;
-    position=reduced.matches?goal:position+(goal-position)*(1-Math.exp(-delta/75));
+    position=reduced.matches||Math.abs(goal-position)>data.clipSeconds*1.5?goal:position+(goal-position)*(1-Math.exp(-delta/75));
     if(Math.abs(position-goal)<frame*.2)position=goal;
     desiredIndex=Math.min(data.clipCount-1,Math.floor(position/data.clipSeconds));
     const slot=ensureSlot(desiredIndex,true);
@@ -157,8 +171,8 @@
     else showLoading();
     if(slot?.ready){ensureSlot(desiredIndex+lastDirection);ensureSlot(desiredIndex-lastDirection);}
     const ahead=desiredIndex+lastDirection*2;
-    if(slot?.ready&&ahead>=0&&ahead<data.clipCount)fetchClip(ahead).catch(()=>{});
-    for(const [index,job] of jobs)if(Math.abs(index-desiredIndex)>3){job.controller.abort();jobs.delete(index);for(const old of slots)if(old.index===index&&old!==display){old.index=-1;old.ready=false;old.generation++;}}
+    if(slot?.ready&&jobs.size<2&&ahead>=0&&ahead<data.clipCount)fetchClip(ahead).catch(()=>{});
+    for(const [index,job] of jobs)if(index!==desiredIndex&&(!slot?.ready||Math.abs(index-desiredIndex)>3)){job.controller.abort();jobs.delete(index);for(const old of slots)if(old.index===index&&old!==display){old.index=-1;old.ready=false;old.generation++;}}
     slider.value=String(goal);slider.style.setProperty('--position',`${goal/lastTime*100}%`);
     root.classList.toggle('has-scrolled',goal>.5);
     root.dataset.targetTime=goal.toFixed(4);
@@ -183,7 +197,7 @@
   document.querySelector('.skip').addEventListener('click',event=>{event.preventDefault();open(chapterDialog);});
   document.querySelectorAll('[data-jump]').forEach(link=>link.addEventListener('click',event=>{
     event.preventDefault();chapterDialog.close();history.replaceState(null,'',link.getAttribute('href'));
-    scrollTo({top:Number(link.dataset.jump)/lastTime*travel,behavior:reduced.matches?'instant':'smooth'});
+    scrollTo({top:Number(link.dataset.jump)/lastTime*travel,behavior:'instant'});
   }));
   document.querySelector('[data-framing]').addEventListener('click',event=>{
     const fill=stage.classList.toggle('fill');event.currentTarget.setAttribute('aria-pressed',String(fill));
