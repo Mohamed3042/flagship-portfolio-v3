@@ -1,0 +1,18 @@
+{
+  "film": "Job Orbit v2 — The Flight",
+  "fps": 60,
+  "frames": {
+    "profile": 1620,
+    "globe": 2140,
+    "findings": 2680,
+    "focus": 3100,
+    "fit": 3580,
+    "nextproof": 4060,
+    "market": 4600,
+    "employers": 5020,
+    "engine": 5500,
+    "anywhere": 5940,
+    "poster": 6330
+  },
+  "description": "Optimized copies of the reviewed 1920×1080 rendered film frames."
+}
