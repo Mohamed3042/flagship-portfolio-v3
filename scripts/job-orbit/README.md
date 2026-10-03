@@ -1,27 +1,36 @@
-# Job Engine Orbit — The Flight
+# Job Engine Orbit — The scroll film
 
-An English/Arabic scroll parallax showcase at `/{lang}/work/job-orbit/`, published under the existing `/flagship-portfolio-v3/` base.
+The complete video is the website at `/{lang}/work/job-orbit/`, under `/flagship-portfolio-v3/`. Native scrolling advances or reverses the actual decoded film. Stopping holds its frame. The world does not call `play()` or replace the movie with still images.
 
-Edit the station copy and HTML in `build.mjs`, appearance in `media/job-orbit-flight/flight.css`, and interactions in `media/job-orbit-flight/flight.js`. Rebuild from the repository root:
+This follows the portfolio's existing [Disney](https://github.com/Mohamed3042/flagship-portfolio/blob/main/public/worlds/disney.html), [Spotify](https://github.com/Mohamed3042/flagship-portfolio/blob/main/public/worlds/spotify.html), and [Cake Studio](https://github.com/Mohamed3042/flagship-portfolio/blob/main/public/worlds/cake-studio-bookends.js) video worlds: a pinned viewport, one global scroll playhead, paused video buffers, and short segments fetched as blobs. Three buffers preserve the visible frame while loading the next target. Adjacent segments are prefetched in the scroll direction; requests far from the playhead are aborted. Loading failures offer a visible retry.
+
+Phone view fills the screen by default. Authored horizontal framing follows the feature panels; **Show full frame** restores the entire original landscape composition. Rotation preserves the scroll position. Desktop defaults to the complete composition and provides **Fill screen**. **Chapters** and the timeline seek the same film. **Watch with sound** opens the original complete film in an optional native player. Reduced motion removes playhead easing while retaining deliberate scroll-controlled video.
+
+Edit localized HTML and chapters in `build-film.mjs`, appearance in `media/job-orbit-flight/film-world.css`, and transport/framing in `media/job-orbit-flight/film-world.js`. Rebuild from the repository root:
 
 ```sh
 node scripts/job-orbit/build.mjs
 ```
 
-No install or build dependencies are needed. The generated pages and media are published directly by the repository's existing GitHub Pages main-root deployment. Rebuilding updates the two new pages and adds their sitemap entries idempotently. It does not regenerate the older REFRACTION pages.
+No install or build dependencies are required. This regenerates only the two Job Orbit pages and their idempotent sitemap entries. GitHub Pages publishes the existing main-branch root. The software notes, cinema and Products collection already link to this route, retaining `project-job-engine-desktop`. The separate `work/job-apply-engine` application manual remains independent.
 
-Integration is additive in the existing localized `production`, `cinema` and `collection` pages. The production anchor `project-job-engine-desktop` is retained. The separate private application manual study at `work/job-apply-engine` is unrelated and remains intact.
+## Delivery media
 
-The ten optimized WebP frames and poster are copies of the reviewed Job Orbit v2 rendered frames; exact frame numbers and FPS are in `media/job-orbit-flight/frames.json`. The original brand PNG is retained without changing its proportions. The bundled fonts are the existing portfolio's Space Grotesk, Inter and Cairo Arabic fonts. The artwork itself retains its original film typography.
+Both versions derive from the completed [Job Orbit v2 film](https://github.com/Mohamed3042/motion-video-skill/releases/tag/job-orbit-v2.0). The original 1080p60 master, share film and editable project remain available there. The scroll derivatives use 30 fps, silent H.264, yuv420p, BT.709, half-second keyframes, no B-frames and faststart. Each profile contains 24 five-second clips with zero-based timestamps: all 3,600 frames cover the full 120 seconds. Clips are served from this site's origin.
 
-The complete film project, master, share MP4, editing ZIP and hashes are available in the [Job Orbit v2 release](https://github.com/Mohamed3042/motion-video-skill/releases/tag/job-orbit-v2.0).
+| Profile | Resolution | Total clip bytes | Largest clip |
+| --- | --- | ---: | ---: |
+| Phone | 1280 × 720 | 50,402,648 | 4,353,733 |
+| Desktop | 1920 × 1080 | 99,923,748 | 8,450,672 |
 
-Native scrolling drives the sticky viewer, crossfade, depth shift, orbit parallax and station rail. There is no scroll interception. Reduced motion and the visible motion toggle disable decorative movement. The MP4 has no source until a visitor chooses playback; it pauses when leaving the player. The ten station descriptions remain readable without JavaScript, and the release download link remains available.
+Each profile's `manifest.json` records individual sizes, SHA-256 hashes, durations, frame counts and encoding properties. Its `sourceSha256` identifies the full delivery derivative before segmentation, rather than the original master. Concatenated decoded frame hashes match that derivative for every frame. The original master remains unchanged, SHA-256 `4282780d9a70edd04beeb7e274e6e03fffb4a0f34abb1f9965bc484d110bf451`.
 
-Illustrations use fictional sample data. They are not product runtime captures or evidence of a live submission. Keep the product truth notes linked from the page and the existing runtime acceptance wording in the production entry.
+The poster, brand logo, fonts and prior still-tour assets are retained. The new film page references only the poster where a native player or share preview needs one; its scroll world displays decoded video.
 
-## Verification on 3 October 2026
+## Verification
 
-Chromium browser checks covered ten station changes per viewport, English desktop, 320- and 390-pixel English layouts, 390-pixel Arabic, reduced motion, image loading, horizontal overflow, logo proportions, zero initial MP4 requests, and no page errors or failed local resources. Representative hero, station and player screenshots were inspected. Real playback from the GitHub release loaded the 1920×1080, 120-second MP4, sought to the selected station, resumed playing and paused after leaving the player. Audio was not listened to and full continuous playback was not reviewed. The original portfolio collection records and prior cinema media references were preserved.
+On 3 October 2026, Chromium checks covered English desktop, 390- and 320-pixel touch layouts, Arabic phone layout and reduced motion. Decoded pixel samples verify forward and reverse movement, identical frames when revisiting settled positions, and a stationary held frame. Additional checks cover segment boundaries, rapid jumps, actual emulated touch gestures, orientation, chapter jumps, framing controls, zero unintended world playback, horizontal overflow and resource errors. A simulated failed request verifies retry recovery. Representative portrait and landscape frames were inspected.
 
-These are browser-layout and media-delivery checks. They do not establish current product provider connections, successful applications or physical-phone acceptance.
+These checks use browser phone emulation; they are not a physical-phone or Safari review. The original soundtrack was not listened to during this website verification.
+
+Illustrations use fictional sample data and are not runtime captures or evidence of completed applications. The page's information dialog links the [product claim notes](https://github.com/Mohamed3042/motion-video-skill/blob/job-orbit-v2/docs/job-orbit/PRODUCT-TRUTH.md). Existing software acceptance wording remains in the portfolio.
